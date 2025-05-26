@@ -1,9 +1,14 @@
 import time
+from dotenv import load_dotenv
+import os
 from bot import filter_messages
 
+# Load .env variables
+load_dotenv()
+
+username = os.getenv('INSTA_USERNAME')
+password = os.getenv('INSTA_PASSWORD')
+
 while True:
-    # Call the function
-    filter_messages('web._.wizard_', 'Md1247111318')
-    
-    # Wait for 5 seconds
+    filter_messages(username, password)
     time.sleep(5)
